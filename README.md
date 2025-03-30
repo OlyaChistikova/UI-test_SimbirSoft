@@ -1,1 +1,1 @@
-# UI-test_SimbirSoft
+# UI-SDET-SimbirSoft
