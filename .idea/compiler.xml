@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="UI-SDET-SimbirSoft-origin" />
+        <module name="UI-test_SimbirSoft" />
         <module name="ExerciseSDET_01" />
       </profile>
     </annotationProcessing>
