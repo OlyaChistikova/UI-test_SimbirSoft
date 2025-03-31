@@ -18,4 +18,4 @@
 
 ## Запуск allure отчётов
 
-- mvn serve
+- **allure serve**
