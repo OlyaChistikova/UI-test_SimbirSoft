@@ -2,6 +2,8 @@ package tests;
 
 import helpers.CustomerActions;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -26,6 +28,8 @@ public class DeleteCustTest extends BaseTest{
      * Метод, который инициализирует необходимые компоненты перед выполнением тестов.
      */
     @BeforeClass
+    @Step("Setting up before tests")
+    @Description("Initial setup for customer actions and base page.")
     public void setup(){
         basePage = new BasePage(driver);
         customerActions = new CustomerActions(driver);
@@ -36,6 +40,8 @@ public class DeleteCustTest extends BaseTest{
      * Проверяет, что текущий URL соответствует ожидаемому.
      */
     @Test(priority = 1, description = "Opening Customer page")
+    @Step("Opening Customer Page")
+    @Description("Verifying that the current URL matches the expected customer page URL.")
     public void testOpenCust() {
         custPage = basePage.openCustList();
         custPage.waitUntilOpen();
@@ -46,6 +52,8 @@ public class DeleteCustTest extends BaseTest{
      * Тест для удаления клиента с именем, длина которого ближе всего к средней длине имен клиентов.
      */
     @Test(priority = 2)
+    @Step("Deleting customer by average name length")
+    @Description("Deletes a customer whose name length is closest to the average name length of existing customers.")
     public void deleteCustomerByAverageNameLength() {
         List<String> actualFirstNames = custPage.getFirstNames();
 
@@ -77,6 +85,8 @@ public class DeleteCustTest extends BaseTest{
      * Метод, выполняемый после каждого теста, который очищает cookies и обновляет страницу.
      */
     @AfterMethod
+    @Step("Clearing cookies and refreshing page after test")
+    @Description("This method clears the cookies and refreshes the page after each test.")
     public void clearCookies(){
         driver.manage().deleteAllCookies();
         driver.navigate().refresh();

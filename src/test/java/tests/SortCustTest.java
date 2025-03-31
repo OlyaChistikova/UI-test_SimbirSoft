@@ -1,6 +1,8 @@
 package tests;
 
 import helpers.PropertyProvider;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -25,6 +27,8 @@ public class SortCustTest extends BaseTest {
      * Метод настройки, который инициализирует необходимые компоненты перед выполнением тестов.
      */
     @BeforeClass
+    @Step("Setting up before tests")
+    @Description("Initial setup for the customer page before running tests.")
     public void setup() {
         basePage = new BasePage(driver);
     }
@@ -34,6 +38,8 @@ public class SortCustTest extends BaseTest {
      * Проверяет, что текущий URL соответствует ожидаемому.
      */
     @Test(priority = 1, description = "Opening Customer page")
+    @Step("Opening Customer Page")
+    @Description("Verifying that the current URL matches the expected customer page URL.")
     public void testOpenCust() {
         custPage = basePage.openCustList();
         custPage.waitUntilOpen();
@@ -45,6 +51,8 @@ public class SortCustTest extends BaseTest {
      * Сравнивает полученный список имен с отсортированным списком.
      */
     @Test(priority = 2, description = "Sort Customers")
+    @Step("Sorting customers by first name")
+    @Description("Retrieving the list of first names and verifying they are sorted correctly.")
     public void testSortCustomersByFirstName() {
         List<String> actualFirstNames = custPage.getFirstNames(); // Получаем список первых имен
         Assert.assertNotNull(actualFirstNames, "The list of first names should not be null!"); // Проверка на null
@@ -59,6 +67,8 @@ public class SortCustTest extends BaseTest {
      * Метод, выполняемый после каждого теста, который очищает cookies и обновляет страницу.
      */
     @AfterMethod
+    @Step("Clearing cookies and refreshing page after test")
+    @Description("This method clears the cookies and refreshes the page after each test.")
     public void clearCookies() {
         driver.manage().deleteAllCookies();
         driver.navigate().refresh();

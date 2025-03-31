@@ -2,6 +2,9 @@ package tests;
 
 import helpers.CustomerDataGenerator;
 import helpers.PropertyProvider;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.AddCustAllert;
@@ -44,6 +47,8 @@ public class AddCustTest extends BaseTest{
      * Проверяет, что текущий URL совпадает с ожидаемым URL.
      */
     @Test(priority = 1, description = "Opening Add Customer page")
+    @Story("Customer Management")
+    @Description("Opening Add Customer page")
     public void testOpenAddCust() {
         addCustPage = basePage.openAddCust();
         addCustPage.waitUntilOpen();
@@ -58,6 +63,8 @@ public class AddCustTest extends BaseTest{
      * @param postcode  почтовый индекс клиента.
      */
     @Test(priority = 2, description = "Authorize with correct data", dataProvider = "Valid login data")
+    @Step("Авторизация клиента с именем: {firstname} и фамилией: {lastname}")
+    @Description("Authorize with correct data.")
     public final void correctDataAuthTest(String firstname, String lastname, String postcode){
         AddCustAllert addCustAllert = addCustPage.login(firstname, lastname, postcode);
         Assert.assertNotNull(addCustAllert, "AddCustAllert sould not be null");
@@ -70,6 +77,8 @@ public class AddCustTest extends BaseTest{
      * и использует заданную фамилию.
      */
     @Test(priority = 3, description = "Creating customer with generated data")
+    @Story("Customer Management")
+    @Step("Creating customer with generated data")
     public final void createCustomerWithGeneratedData(){
         String postcode = CustomerDataGenerator.generatePostCode();
         String firstname = CustomerDataGenerator.generateFirstNameFromPostCode(postcode);
