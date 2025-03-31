@@ -10,3 +10,12 @@
 - **TestNG**: последняя версия
 - **ChromeDriver**: соответствующая версия вашего браузера Chrome
 - **Maven**: '3.9.9'
+
+## Запуск тестов 
+
+- **tests_default** - mvn clean test -P tests_default
+- **tests_default_parallel** - mvn clean test -P tests_default_parallel
+
+## Запуск allure отчётов
+
+- mvn serve
