@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-autotest" class="navigator-link">
-              <span class="suite-name border-passed">autotest</span>
+              <span class="suite-name border-skipped">autotest</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-autotest" class="navigator-link ">
-                    <span>C:\Users\ПК\IdeaProjects\ExerciseSDET_01\src\test\resources\suites\tests_default.xml</span>
+                    <span>C:\Users\ПК\GitRepository\UI-test_SimbirSoft\src\test\resources\suites\tests_default.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,51 +92,51 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">7 methods,  7 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-autotest" class="hide-methods passed suite-autotest"> (hide)</a> <!-- hide-methods passed suite-autotest -->
-                      <a href="#" panel-name="suite-autotest" class="show-methods passed suite-autotest"> (show)</a> <!-- show-methods passed suite-autotest -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-autotest" class="hide-methods skipped suite-autotest"> (hide)</a> <!-- hide-methods skipped suite-autotest -->
+                      <a href="#" panel-name="suite-autotest" class="show-methods skipped suite-autotest"> (show)</a> <!-- show-methods skipped suite-autotest -->
                     </span>
-                    <div class="method-list-content passed suite-autotest">
+                    <div class="method-list-content skipped suite-autotest">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.AddCustTest" class="method navigator-link" hash-for-method="createCustomerWithGeneratedData">createCustomerWithGeneratedData</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.DeleteCustTest" class="method navigator-link" hash-for-method="deleteCustomerByAverageNameLength">deleteCustomerByAverageNameLength</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.AddCustTest" class="method navigator-link" hash-for-method="incorrectDataAuthTest(abzap, example, 0001252667)">incorrectDataAuthTest(abzap, example, 0001252667)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.AddCustTest" class="method navigator-link" hash-for-method="testOpenAddCust">testOpenAddCust</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.SortCustTest" class="method navigator-link" hash-for-method="testOpenCust">testOpenCust</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.DeleteCustTest" class="method navigator-link" hash-for-method="testOpenCust">testOpenCust</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-autotest" title="tests.SortCustTest" class="method navigator-link" hash-for-method="testSortCustomersByFirstName">testSortCustomersByFirstName</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-autotest -->
+                    </div> <!-- method-list-content skipped suite-autotest -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -148,9 +148,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-autotest" class="panel autotest">
-          <div class="suite-autotest-class-passed">
+          <div class="suite-autotest-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">tests.DeleteCustTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -159,6 +159,26 @@
                   <a name="deleteCustomerByAverageNameLength">
                   </a> <!-- deleteCustomerByAverageNameLength -->
                   <span class="method-name">deleteCustomerByAverageNameLength</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f5bc5772a141b3041074f74269af373d, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58089}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58089/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f5bc5772a141b3041074f74269af373d
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -166,41 +186,35 @@
                   <a name="testOpenCust">
                   </a> <!-- testOpenCust -->
                   <span class="method-name">testOpenCust</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f5bc5772a141b3041074f74269af373d, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58089}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58089/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f5bc5772a141b3041074f74269af373d
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Opening Customer page)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-autotest-class-passed -->
-          <div class="suite-autotest-class-passed">
+          </div> <!-- suite-autotest-class-skipped -->
+          <div class="suite-autotest-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.SortCustTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testOpenCust">
-                  </a> <!-- testOpenCust -->
-                  <span class="method-name">testOpenCust</span>
-                  <em>
-(Opening Customer page)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSortCustomersByFirstName">
-                  </a> <!-- testSortCustomersByFirstName -->
-                  <span class="method-name">testSortCustomersByFirstName</span>
-                  <em>
-(Sort Customers)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-autotest-class-passed -->
-          <div class="suite-autotest-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">tests.AddCustTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -209,6 +223,26 @@
                   <a name="createCustomerWithGeneratedData">
                   </a> <!-- createCustomerWithGeneratedData -->
                   <span class="method-name">createCustomerWithGeneratedData</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.000
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a62f6647af96b1a793757ef159bb8c04, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57971}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57971/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a62f6647af96b1a793757ef159bb8c04
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Creating customer with generated data)                  </em>
                 </div> <!-- method-content -->
@@ -219,8 +253,28 @@
                   </a> <!-- incorrectDataAuthTest(abzap, example, 0001252667) -->
                   <span class="method-name">incorrectDataAuthTest</span>
                   <span class="parameters">(abzap,example,0001252667)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.000
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a62f6647af96b1a793757ef159bb8c04, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57971}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57971/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a62f6647af96b1a793757ef159bb8c04
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                   <em>
-(Authorize with incorrect data)                  </em>
+(Authorize with correct data)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -228,16 +282,102 @@
                   <a name="testOpenAddCust">
                   </a> <!-- testOpenAddCust -->
                   <span class="method-name">testOpenAddCust</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.000
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a62f6647af96b1a793757ef159bb8c04, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57971}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57971/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a62f6647af96b1a793757ef159bb8c04
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Opening Add Customer page)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-autotest-class-passed -->
+          </div> <!-- suite-autotest-class-skipped -->
+          <div class="suite-autotest-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.SortCustTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testOpenCust">
+                  </a> <!-- testOpenCust -->
+                  <span class="method-name">testOpenCust</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 55.290
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d06546aa62d60e427af673860d0a15, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58029}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58029/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d06546aa62d60e427af673860d0a15
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Opening Customer page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSortCustomersByFirstName">
+                  </a> <!-- testSortCustomersByFirstName -->
+                  <span class="method-name">testSortCustomersByFirstName</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 55.290
+  (Session info: chrome=134.0.6998.178)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d06546aa62d60e427af673860d0a15, get {url=https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\90C5~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58029}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58029/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d06546aa62d60e427af673860d0a15
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:313)
+	at tests.BaseTest.init(BaseTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Sort Customers)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-autotest-class-skipped -->
         </div> <!-- panel autotest -->
         <div panel-name="test-xml-autotest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ПК\IdeaProjects\ExerciseSDET_01\src\test\resources\suites\tests_default.xml</span>
+            <span class="header-content">C:\Users\ПК\GitRepository\UI-test_SimbirSoft\src\test\resources\suites\tests_default.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -290,38 +430,38 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testOpenCust')
-data.setCell(0, 2, 'tests.SortCustTest')
-data.setCell(0, 3, 7463);
+data.setCell(0, 1, 'incorrectDataAuthTest')
+data.setCell(0, 2, 'tests.AddCustTest')
+data.setCell(0, 3, 0);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testOpenCust')
-data.setCell(1, 2, 'tests.DeleteCustTest')
-data.setCell(1, 3, 7057);
+data.setCell(1, 1, 'createCustomerWithGeneratedData')
+data.setCell(1, 2, 'tests.AddCustTest')
+data.setCell(1, 3, 0);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testOpenAddCust')
-data.setCell(2, 2, 'tests.AddCustTest')
-data.setCell(2, 3, 2247);
+data.setCell(2, 1, 'deleteCustomerByAverageNameLength')
+data.setCell(2, 2, 'tests.DeleteCustTest')
+data.setCell(2, 3, 0);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'createCustomerWithGeneratedData')
+data.setCell(3, 1, 'testOpenAddCust')
 data.setCell(3, 2, 'tests.AddCustTest')
-data.setCell(3, 3, 1679);
+data.setCell(3, 3, 0);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'incorrectDataAuthTest')
-data.setCell(4, 2, 'tests.AddCustTest')
-data.setCell(4, 3, 959);
+data.setCell(4, 1, 'testSortCustomersByFirstName')
+data.setCell(4, 2, 'tests.SortCustTest')
+data.setCell(4, 3, 0);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'deleteCustomerByAverageNameLength')
-data.setCell(5, 2, 'tests.DeleteCustTest')
-data.setCell(5, 3, 895);
+data.setCell(5, 1, 'testOpenCust')
+data.setCell(5, 2, 'tests.SortCustTest')
+data.setCell(5, 3, 0);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testSortCustomersByFirstName')
-data.setCell(6, 2, 'tests.SortCustTest')
-data.setCell(6, 3, 346);
+data.setCell(6, 1, 'testOpenCust')
+data.setCell(6, 2, 'tests.DeleteCustTest')
+data.setCell(6, 3, 0);
 window.suiteTableData['autotest']= { tableData: data, tableDiv: 'times-div-autotest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-autotest">
               </div> <!-- times-div-autotest -->
             </div> <!-- times-div -->
@@ -349,102 +489,108 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">tests.AddCustTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">init(org.testng.TestRunner@64f1fd08)</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">init(org.testng.TestRunner@60baef24)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">38783 ms</span>
+                <span class="method-start">139749 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testOpenAddCust</span>
-                <span class="method-start">38808 ms</span>
+                <span class="method-start">139858 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">41251 ms</span>
+                <span class="method-start">139896 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">incorrectDataAuthTest(abzap, example, 0001252667)</span>
-                <span class="method-start">41716 ms</span>
+                <span class="method-start">139966 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">42748 ms</span>
+                <span class="method-start">140012 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">createCustomerWithGeneratedData</span>
-                <span class="method-start">43160 ms</span>
+                <span class="method-start">140022 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">44842 ms</span>
+                <span class="method-start">140044 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">45273 ms</span>
+                <span class="method-start">140062 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.SortCustTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">init(org.testng.TestRunner@64f1fd08)</span>
-                <span class="method-start">46825 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">init(org.testng.TestRunner@60baef24)</span>
+                <span class="method-start">140067 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">246614 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testOpenCust</span>
-                <span class="method-start">82831 ms</span>
+                <span class="method-start">246623 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">82831 ms</span>
-              </div> <!-- configuration-class before -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">90294 ms</span>
+                <span class="method-start">246681 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">testSortCustomersByFirstName</span>
-                <span class="method-start">91371 ms</span>
+                <span class="method-start">246726 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">91717 ms</span>
+                <span class="method-start">246735 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">92107 ms</span>
+                <span class="method-start">246887 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.DeleteCustTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">init(org.testng.TestRunner@64f1fd08)</span>
-                <span class="method-start">94167 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">init(org.testng.TestRunner@60baef24)</span>
+                <span class="method-start">246892 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">130935 ms</span>
+                <span class="method-start">349786 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testOpenCust</span>
-                <span class="method-start">130943 ms</span>
+                <span class="method-start">349791 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">138000 ms</span>
+                <span class="method-start">349865 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">deleteCustomerByAverageNameLength</span>
-                <span class="method-start">138498 ms</span>
+                <span class="method-start">350011 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">clearCookies</span>
-                <span class="method-start">139393 ms</span>
+                <span class="method-start">350172 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">139821 ms</span>
+                <span class="method-start">350177 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

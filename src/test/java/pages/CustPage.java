@@ -11,6 +11,10 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Класс страницы списка клиентов.
+ * Обеспечивает взаимодействие с элементами на странице списка клиентов.
+ */
 public class CustPage extends BasePage{
 
     @FindBy(xpath = "//table[@class='table table-bordered table-striped']")
@@ -21,9 +25,13 @@ public class CustPage extends BasePage{
 
     public CustPage(final WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Метод для получения списка первых имен клиентов.
+     *
+     * @return список строк с именами клиентов.
+     */
     public List<String> getFirstNames() {
         List<String> names = new ArrayList<>();
         for (WebElement name : firstNames) { // Собираем все имена в список
@@ -32,6 +40,10 @@ public class CustPage extends BasePage{
         return names;
     }
 
+    /**
+     * Метод ожидания загрузки страницы.
+     * Ожидает, пока таблица клиентов станет видимой.
+     */
     public void waitUntilOpen(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(table));

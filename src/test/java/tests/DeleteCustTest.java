@@ -1,12 +1,11 @@
 package tests;
 
-import helpers.PropertyProvider;
-import org.openqa.selenium.By;
+import helpers.CustomerActions;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.AddCustPage;
 import pages.BasePage;
 import pages.CustPage;
 
@@ -15,33 +14,45 @@ import java.util.OptionalDouble;
 
 import static helpers.EndPoint.CASTLIST;
 
+/**
+ * Тест для удаления клиента.
+ */
 public class DeleteCustTest extends BaseTest{
 
     protected CustPage custPage;
-    protected PropertyProvider propertyProvider;
+    private CustomerActions customerActions;
 
+    /**
+     * Метод, который инициализирует необходимые компоненты перед выполнением тестов.
+     */
     @BeforeClass
     public void setup(){
         basePage = new BasePage(driver);
-        propertyProvider = PropertyProvider.getInstance();
+        customerActions = new CustomerActions(driver);
     }
 
+    /**
+     * Тест для открытия страницы клиентов.
+     * Проверяет, что текущий URL соответствует ожидаемому.
+     */
     @Test(priority = 1, description = "Opening Customer page")
-    public void testOpenCust() throws InterruptedException {
+    public void testOpenCust() {
         custPage = basePage.openCustList();
         custPage.waitUntilOpen();
         Assert.assertEquals(driver.getCurrentUrl(), CASTLIST.getUrl(), "Current url doesn't match expected");
-        Thread.sleep(5000);
     }
-
-
+//разбить тест
+    /**
+     * Тест для удаления клиента с именем, длина которого ближе всего к средней длине имен клиентов.
+     */
     @Test(priority = 2)
     public void deleteCustomerByAverageNameLength() {
         List<String> actualFirstNames = custPage.getFirstNames();
 
-        OptionalDouble averageLengthOpt = actualFirstNames.stream()
-                .mapToInt(String::length)
-                .average(); // Вычисляем среднее
+        /**
+         Вычисляем среднюю длину имен
+         */
+        OptionalDouble averageLengthOpt = customerActions.calculateAverageNameLength(actualFirstNames);
 
         if (!averageLengthOpt.isPresent()) {
             Assert.fail("No customer names found."); // Проверяем, есть ли имена
@@ -50,26 +61,21 @@ public class DeleteCustTest extends BaseTest{
         double averageLength = averageLengthOpt.getAsDouble(); // Получаем среднюю длину
 
         // Находим имя, длина которого ближе всего к средней
-        String closestName = actualFirstNames.stream()
-                .min((name1, name2) -> {
-                    double diff1 = Math.abs(name1.length() - averageLength);
-                    double diff2 = Math.abs(name2.length() - averageLength);
-                    return Double.compare(diff1, diff2);
-                }).orElse(null);
+        String closestName = customerActions.findClosestNameToAverageLength(actualFirstNames, averageLength);
+
         if (closestName != null) {
-            System.out.println("Deleting customer: " + closestName);
-            // Удаляем клиента (предполагается, что элемент удаления доступен)
-            driver.findElement(By.xpath("//td[contains(text(), '"
-                    + closestName + "')]/following-sibling::td/button[contains(text(), 'Delete')]")).click();
-            // Проверяем, что клиент был удален
-            // Снова открываем список клиентов
+            customerActions.deleteCustomerByName(closestName); // Удаляем клиента
             actualFirstNames = custPage.getFirstNames(); // Обновляем список имен
-            Assert.assertFalse(actualFirstNames.contains(closestName), "Customer was not deleted successfully!");
+
+            Assert.assertTrue(customerActions.isCustomerDeleted(actualFirstNames, closestName), "Customer was not deleted successfully!");
         } else {
             Assert.fail("Could not find a customer to delete based on average length.");
         }
     }
 
+    /**
+     * Метод, выполняемый после каждого теста, который очищает cookies и обновляет страницу.
+     */
     @AfterMethod
     public void clearCookies(){
         driver.manage().deleteAllCookies();

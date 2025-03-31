@@ -14,16 +14,24 @@ import pages.BasePage;
 
 import java.time.Duration;
 
+/**
+ * Базовый класс тестов, инициализирует драйвер и общие настройки для тестов.
+ */
 public class BaseTest {
 
     WebDriver driver;
-
     BasePage basePage;
 
+    /**
+     * Метод инициализации, который запускается перед выполнением тестов.
+     * Настраивает веб-драйвер и загружает целевой URL.
+     *
+     * @param context контекст теста, используемый для передачи драйвера между тестами.
+     */
     @BeforeClass
     public void init(final ITestContext context){
-        String browserName = PropertyProvider.getInstance().getProperty("browser.name");
-        int pageLoadTimeOut = Integer.parseInt(PropertyProvider.getInstance().getProperty("page.load.timeout"));
+        String browserName = PropertyProvider.getProperty("browser.name");
+        int pageLoadTimeOut = Integer.parseInt(PropertyProvider.getProperty("page.load.timeout"));
         WebDriverManager.getInstance(browserName).setup();
 
         switch (browserName) {
@@ -40,11 +48,15 @@ public class BaseTest {
                 .pageLoadTimeout(Duration.ofSeconds(pageLoadTimeOut));
 
         context.setAttribute("driver", driver);
-        String webUrl = PropertyProvider.getInstance().getProperty("web.url");
+        String webUrl = PropertyProvider.getProperty("web.url");
         driver.get(webUrl);
         basePage = new BasePage(driver);
     }
 
+    /**
+     * Метод, выполняемый после завершения всех тестов в классе.
+     * Закрывает веб-драйвер, если он инициализирован.
+     */
     @AfterClass
     public final void tearDown() {
         if (driver != null){
