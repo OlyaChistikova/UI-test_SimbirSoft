@@ -39,7 +39,7 @@ public class AddCustTest extends BaseTest{
         Assert.assertEquals(driver.getCurrentUrl(), ADDCUST.getUrl(), "Current url doesn't match expected");
     }
 
-    @Test(priority = 2, description = "Authorize with incorrect data", dataProvider = "Valid login data")
+    @Test(priority = 2, description = "Authorize with correct data", dataProvider = "Valid login data")
     public final void incorrectDataAuthTest(String firstname, String lastname, String postcode){
         AddCustAllert addCustAllert = addCustPage.login(firstname, lastname, postcode);
         addCustAllert.accept();
