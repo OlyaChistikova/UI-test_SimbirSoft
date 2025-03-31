@@ -2,8 +2,17 @@ package helpers;
 
 import java.util.Random;
 
+/**
+ * Класс-генератор данных для клиентов.
+ * Предоставляет методы для генерации postcode и firstname.
+ */
 public class CustomerDataGenerator {
 
+    /**
+     * Генерирует postcode, состоящий из 10 цифр.
+     *
+     * @return строку, представляющую случайный почтовый индекс.
+     */
     public static String generatePostCode(){
         Random random = new Random();
         StringBuilder postCode = new StringBuilder();
@@ -14,6 +23,13 @@ public class CustomerDataGenerator {
         return postCode.toString();
     }
 
+    /**
+     * Генерирует имя клиента на основе почтового индекса.
+     * Каждая пара цифр из почтового индекса преобразуется в букву на основе её значения.
+     *
+     * @param postcode строка, представляющая почтовый индекс.
+     * @return строку, представляющую сгенерированное имя клиента.
+     */
     public static String generateFirstNameFromPostCode(String postcode){
         StringBuilder firstName = new StringBuilder();
 

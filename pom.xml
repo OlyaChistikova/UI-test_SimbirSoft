@@ -25,6 +25,15 @@
                 <suite.xml.file>src/test/resources/suites/tests_default.xml</suite.xml.file>
             </properties>
         </profile>
+        <profile>
+            <id>tests_default_parallel</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.file>src/test/resources/suites/tests_default_parallel.xml</suite.xml.file>
+            </properties>
+        </profile>
     </profiles>
 
     <build>
