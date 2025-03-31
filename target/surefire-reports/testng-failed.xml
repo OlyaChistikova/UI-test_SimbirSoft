@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [autotest]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Tests(failed)" verbose="0">
+    <classes>
+      <class name="tests.DeleteCustTest">
+        <methods>
+          <include name="deleteCustomerByAverageNameLength"/>
+          <include name="testOpenCust"/>
+          <include name="init"/>
+          <include name="clearCookies"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.DeleteCustTest -->
+      <class name="tests.AddCustTest">
+        <methods>
+          <include name="testOpenAddCust"/>
+          <include name="clearCookies"/>
+          <include name="incorrectDataAuthTest"/>
+          <include name="init"/>
+          <include name="createCustomerWithGeneratedData"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.AddCustTest -->
+      <class name="tests.SortCustTest">
+        <methods>
+          <include name="testOpenCust"/>
+          <include name="clearCookies"/>
+          <include name="testSortCustomersByFirstName"/>
+          <include name="init"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.SortCustTest -->
+    </classes>
+  </test> <!-- Tests(failed) -->
+</suite> <!-- Failed suite [autotest] -->

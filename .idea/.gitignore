@@ -1,0 +1,20 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+* Для Maven
+taget/
+*.class
+
+* Для Intellij IDEA
+.idea/
+*.iml
+out/
+
+* TestNG
+test-output/
+*.xml
+
+* Allure
+allure-results/
+allure-reports/
