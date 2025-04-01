@@ -53,7 +53,7 @@ public class BasePage {
      *
      * @return объект CustPage, представляющий страницу списка клиентов.
      */
-    @Step("Open Customer List")
+    @Step("Open Customer List page")
     public final CustPage openCustList(){
         waitThenClick(driver, btnCustList);
         return new CustPage(driver);
@@ -63,6 +63,7 @@ public class BasePage {
      * Метод ожидания загрузки страницы.
      * Ожидает, пока логотип приложения станет видимым.
      */
+    @Step("Waiting for the base page to load")
     public BasePage waitUntilOpen(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(appLogo));

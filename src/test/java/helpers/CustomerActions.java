@@ -11,16 +11,6 @@ import java.util.OptionalDouble;
  * нахождение имени, близкого к средней длине, и удаление клиентов.
  */
 public class CustomerActions {
-    private final WebDriver driver;
-
-    /**
-     * Конструктор класса CustomerActions.
-     *
-     * @param driver веб-драйвер, который будет использоваться для взаимодействия с элементами на страницах.
-     */
-    public CustomerActions(WebDriver driver) {
-        this.driver = driver;
-    }
 
     /**
      * Метод для вычисления средней длины имен клиентов.
@@ -51,18 +41,6 @@ public class CustomerActions {
                     double diff2 = Math.abs(name2.length() - averageLength);
                     return Double.compare(diff1, diff2);
                 }).orElse(null);
-    }
-
-    /**
-     * Метод для удаления клиента по имени.
-     *
-     * @param name имя клиента, которого необходимо удалить.
-     */
-    public void deleteCustomerByName(String name) {
-        System.out.println("Deleting customer: " + name);
-
-        // Нахождение и нажатие кнопки удаления клиента
-        driver.findElement(By.xpath("//td[contains(text(), '" + name + "')]/following-sibling::td/button[contains(text(), 'Delete')]")).click();
     }
 
     /**

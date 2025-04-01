@@ -1,5 +1,7 @@
 package pages;
 
+import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +33,7 @@ public class CustPage extends BasePage{
      *
      * @return список строк с именами клиентов.
      */
+    @Step("Getting list of first names from customer table")
     public List<String> getFirstNames() {
         List<String> names = new ArrayList<>();
         for (WebElement name : firstNames) { // Собираем все имена в список
@@ -39,10 +42,22 @@ public class CustPage extends BasePage{
         return names;
     }
 
+
+    /**
+     * Метод для удаления клиента по имени.
+     *
+     * @param name имя клиента, которого необходимо удалить.
+     */
+    @Step("Deleting customer with name: {name}")
+    public void deleteCustomerByName(String name) {
+        driver.findElement(By.xpath("//td[contains(text(), '" + name + "')]/following-sibling::td/button[contains(text(), 'Delete')]")).click();
+    }
+
     /**
      * Метод ожидания загрузки страницы.
      * Ожидает, пока таблица клиентов станет видимой.
      */
+    @Step("Waiting until the customer page is loaded")
     public CustPage waitUntilOpen(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(table));

@@ -3,7 +3,6 @@ package tests;
 import helpers.CustomerDataGenerator;
 import helpers.PropertyProvider;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -19,6 +18,7 @@ import static helpers.EndPoint.ADDCUST;
 public class AddCustTest extends BaseTest{
 
     private AddCustPage addCustPage;
+    private AddCustAllert addCustAllert;
 
     /**
      * Поставщик данных, который предоставляет корректные данные для входа в тесты.
@@ -62,16 +62,13 @@ public class AddCustTest extends BaseTest{
      * @param postcode  почтовый индекс клиента.
      */
     @Test(priority = 2, description = "Adding customer with correct data", dataProvider = "Valid login data")
-    @Step("Добавление пользователя с именем: {firstname} и фамилией: {lastname}")
     @Description("Adding customer with correct data.")
-    public final void correctDataAuthTest(String firstname, String lastname, String postcode){
-        AddCustAllert addCustAllert = addCustPage.login(firstname, lastname, postcode);
+    public final void correctDataAuthSuccessfulTest(String firstname, String lastname, String postcode){
+        addCustAllert = addCustPage.addCustomer(firstname, lastname, postcode);
 
         //Получаем текст алерта и проверяем его
         String allertText = addCustAllert.getAlertText();
-        Assert.assertNotNull(allertText, "Alert text should not be null");
         Assert.assertEquals(allertText, "Customer has been successfully added with id: ", "Alert text does not match expected value");
-        addCustAllert.accept();
     }
 
     /**
@@ -81,18 +78,16 @@ public class AddCustTest extends BaseTest{
      */
     @Test(priority = 3, description = "Creating customer with generated data")
     @Story("Customer Management")
-    @Step("Creating customer with generated data")
-    public final void createCustomerWithGeneratedDataTest(){
+    public final void createCustomerWithGeneratedDataSuccessfulTest(){
         String postcode = CustomerDataGenerator.generatePostCode();
         String firstname = CustomerDataGenerator.generateFirstNameFromPostCode(postcode);
         String lastname = PropertyProvider.getProperty("last.name.random");
-        AddCustAllert addCustAllert = addCustPage.login(firstname, lastname, postcode);
+        addCustAllert = addCustPage.addCustomer(firstname, lastname, postcode);
 
         //Получаем текст алерта и проверяем его
         String allertText = addCustAllert.getAlertText();
-        Assert.assertNotNull(allertText, "Alert text should not be null");
         Assert.assertEquals(allertText, "Customer has been successfully added with id: ", "Alert text does not match expected value");
-        addCustAllert.accept();
+
     }
 
     /**
@@ -100,6 +95,7 @@ public class AddCustTest extends BaseTest{
      */
     @AfterMethod
     public final void clearCookies(){
+        addCustAllert.accept();
         driver.manage().deleteAllCookies();
         driver.navigate().refresh();
     }

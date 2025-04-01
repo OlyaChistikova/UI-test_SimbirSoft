@@ -3,7 +3,6 @@ package tests;
 import helpers.PropertyProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,7 +28,6 @@ public class BaseTest {
      * @param context контекст теста, используемый для передачи драйвера между тестами.
      */
     @BeforeClass
-    @Step("Initializing tests")
     @Description("This method sets up the web driver and loads the target URL.")
     public void init(final ITestContext context){
         String browserName = PropertyProvider.getProperty("browser.name");
@@ -60,7 +58,6 @@ public class BaseTest {
      * Закрывает веб-драйвер, если он инициализирован.
      */
     @AfterClass
-    @Step("Tearing down tests")
     @Description("This method closes the web driver after tests are completed.")
     public final void tearDown() {
         if (driver != null){

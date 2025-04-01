@@ -45,7 +45,7 @@ public class AddCustPage extends BasePage{
      * @return объект AddCustAllert, представляющий всплывающее сообщение.
      */
     @Step("Autorize with first name: {first_name}, last name: {last_name}, post code: {post_code}")
-    public final AddCustAllert login(final String first_name, final String last_name, final String post_code){
+    public final AddCustAllert addCustomer(final String first_name, final String last_name, final String post_code){
         first_name_input.sendKeys(first_name);
         last_name_input.sendKeys(last_name);
         post_code_input.sendKeys(post_code);
@@ -56,6 +56,7 @@ public class AddCustPage extends BasePage{
     /**
      * Метод ожидания, пока страница станет видимой.
      */
+    @Step("Waiting until the add customer page is loaded")
     public AddCustPage waitUntilOpen(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(log));
