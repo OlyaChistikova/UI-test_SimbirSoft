@@ -1,6 +1,5 @@
 package tests;
 
-import helpers.PropertyProvider;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.testng.Assert;
@@ -40,20 +39,19 @@ public class SortCustTest extends BaseTest {
     @Test(priority = 1, description = "Opening Customer page")
     @Step("Opening Customer Page")
     @Description("Verifying that the current URL matches the expected customer page URL.")
-    public void testOpenCust() {
-        custPage = basePage.openCustList();
-        custPage.waitUntilOpen();
+    public void openCustTest() {
+        custPage = basePage.openCustList().waitUntilOpen();
         Assert.assertEquals(driver.getCurrentUrl(), CASTLIST.getUrl(), "Current url doesn't match expected");
     }
 
     /**
-     * Тест для сортировки клиентов по первым именам.
+     * Тест для сортировки пользователей по первым именам.
      * Сравнивает полученный список имен с отсортированным списком.
      */
     @Test(priority = 2, description = "Sort Customers")
     @Step("Sorting customers by first name")
     @Description("Retrieving the list of first names and verifying they are sorted correctly.")
-    public void testSortCustomersByFirstName() {
+    public void SortCustomersByFirstNameTest() {
         List<String> actualFirstNames = custPage.getFirstNames(); // Получаем список первых имен
         Assert.assertNotNull(actualFirstNames, "The list of first names should not be null!"); // Проверка на null
         Assert.assertFalse(actualFirstNames.isEmpty(), "The list of first names should not be empty!"); // Проверка на пустоту

@@ -6,8 +6,8 @@
 ## Технологии и версии
 
 - **Java**: '17'
-- **Selenium WebDriver**: последняя версия
-- **TestNG**: последняя версия
+- **Selenium WebDriver**: '4.29.0'
+- **TestNG**: '7.11.0'
 - **ChromeDriver**: соответствующая версия вашего браузера Chrome
 - **Maven**: '3.9.9'
 

@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v132.runtime.model.StackTrace;
 
 /**
  * Класс для управления алертами в веб-приложении.
@@ -24,7 +23,6 @@ public class AddCustAllert {
     public void accept() {
         waitForAlert();
         Alert alert = driver.switchTo().alert();
-        String alertText = alert.getText();
         alert.accept();
     }
 
@@ -33,7 +31,6 @@ public class AddCustAllert {
      *
      * @return текст алерта.
      */
-//посмотреть используется ли
     public String getAlertText() {
         waitForAlert();
         Alert alert = driver.switchTo().alert();
@@ -43,14 +40,14 @@ public class AddCustAllert {
     /**
      * Ожидает появления алерта.
      *
-     * Если алерт отсутствует, выводит сообщение в консоль.
+     * @return allert
+     * @throws NoAlertPresentException если алерт отсутствует
      */
-//тоже надо будет переделать
     public void waitForAlert() {
         try {
             driver.switchTo().alert();
         } catch (NoAlertPresentException e) {
-            System.out.println("No alert present");
+            throw new NoAlertPresentException("No allert present");
         }
     }
 }

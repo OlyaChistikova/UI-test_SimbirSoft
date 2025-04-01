@@ -38,19 +38,8 @@ public class Waiters {
      * @param driver веб-драйвер, используемый для ожиданий.
      */
     public Waiters(WebDriver driver){
-        int timeout = Integer.parseInt(PropertyProvider.getInstance().getProperty("explicit.timeout"));
+        int timeout = Integer.parseInt(PropertyProvider.getProperty("explicit.timeout"));
         wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
-    }
-
-    /**
-     * Метод ожидания, пока элемент не станет видимым.
-     *
-     * @param driver веб-драйвер, используемый для ожидания.
-     * @param webElement элемент, который необходимо дождаться.
-     */
-//посмотреть используется метод или нет
-    public static void waitUntilVisible(WebDriver driver, final WebElement webElement){
-        getInstance(driver).wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     /**

@@ -4,7 +4,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -38,7 +37,7 @@ public class AddCustPage extends BasePage{
     }
 
     /**
-     * Метод для авторизации с использованием имени, фамилии и почтового индекса.
+     * Метод для добавления пользователя с использованием имени, фамилии и почтового индекса.
      *
      * @param first_name имя клиента.
      * @param last_name  фамилия клиента.
@@ -57,9 +56,10 @@ public class AddCustPage extends BasePage{
     /**
      * Метод ожидания, пока страница станет видимой.
      */
-    public void waitUntilOpen(){
+    public AddCustPage waitUntilOpen(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(log));
+        return this;
     }
 
 }

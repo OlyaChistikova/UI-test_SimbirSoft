@@ -49,46 +49,49 @@ public class AddCustTest extends BaseTest{
     @Test(priority = 1, description = "Opening Add Customer page")
     @Story("Customer Management")
     @Description("Opening Add Customer page")
-    public void testOpenAddCust() {
-        addCustPage = basePage.openAddCust();
-        addCustPage.waitUntilOpen();
+    public void openAddCustTest() {
+        addCustPage = basePage.openAddCust().waitUntilOpen();
         Assert.assertEquals(driver.getCurrentUrl(), ADDCUST.getUrl(), "Current url doesn't match expected");
     }
 
     /**
-     * Тест для авторизации с корректными данными для входа с использованием данных из поставщика данных.
+     * Тест для добавления пользователя с корректными данными для входа из поставщика данных.
      *
      * @param firstname имя клиента.
      * @param lastname  фамилия клиента.
      * @param postcode  почтовый индекс клиента.
      */
-    @Test(priority = 2, description = "Authorize with correct data", dataProvider = "Valid login data")
-    @Step("Авторизация клиента с именем: {firstname} и фамилией: {lastname}")
-    @Description("Authorize with correct data.")
+    @Test(priority = 2, description = "Adding customer with correct data", dataProvider = "Valid login data")
+    @Step("Добавление пользователя с именем: {firstname} и фамилией: {lastname}")
+    @Description("Adding customer with correct data.")
     public final void correctDataAuthTest(String firstname, String lastname, String postcode){
         AddCustAllert addCustAllert = addCustPage.login(firstname, lastname, postcode);
-        Assert.assertNotNull(addCustAllert, "AddCustAllert sould not be null");
+
+        //Получаем текст алерта и проверяем его
+        String allertText = addCustAllert.getAlertText();
+        Assert.assertNotNull(allertText, "Alert text should not be null");
+        Assert.assertEquals(allertText, "Customer has been successfully added with id: ", "Alert text does not match expected value");
         addCustAllert.accept();
     }
 
     /**
-     * Тест для создания клиента со сгенерированными данными.
+     * Тест для создания пользователя со сгенерированными данными.
      * Генерирует почтовый индекс, затем получает имя на основе почтового индекса
      * и использует заданную фамилию.
      */
     @Test(priority = 3, description = "Creating customer with generated data")
     @Story("Customer Management")
     @Step("Creating customer with generated data")
-    public final void createCustomerWithGeneratedData(){
+    public final void createCustomerWithGeneratedDataTest(){
         String postcode = CustomerDataGenerator.generatePostCode();
         String firstname = CustomerDataGenerator.generateFirstNameFromPostCode(postcode);
         String lastname = PropertyProvider.getProperty("last.name.random");
         AddCustAllert addCustAllert = addCustPage.login(firstname, lastname, postcode);
 
-        /**
-         * Проверяем, что assertNotNull успешно инициализирован
-         */
-        Assert.assertNotNull(addCustAllert, "AddCustAllert sould not be null");
+        //Получаем текст алерта и проверяем его
+        String allertText = addCustAllert.getAlertText();
+        Assert.assertNotNull(allertText, "Alert text should not be null");
+        Assert.assertEquals(allertText, "Customer has been successfully added with id: ", "Alert text does not match expected value");
         addCustAllert.accept();
     }
 

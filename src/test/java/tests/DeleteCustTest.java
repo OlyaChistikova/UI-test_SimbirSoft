@@ -42,19 +42,18 @@ public class DeleteCustTest extends BaseTest{
     @Test(priority = 1, description = "Opening Customer page")
     @Step("Opening Customer Page")
     @Description("Verifying that the current URL matches the expected customer page URL.")
-    public void testOpenCust() {
-        custPage = basePage.openCustList();
-        custPage.waitUntilOpen();
+    public void openCustTest() {
+        custPage = basePage.openCustList().waitUntilOpen();
         Assert.assertEquals(driver.getCurrentUrl(), CASTLIST.getUrl(), "Current url doesn't match expected");
     }
-//разбить тест
+
     /**
      * Тест для удаления клиента с именем, длина которого ближе всего к средней длине имен клиентов.
      */
     @Test(priority = 2)
     @Step("Deleting customer by average name length")
     @Description("Deletes a customer whose name length is closest to the average name length of existing customers.")
-    public void deleteCustomerByAverageNameLength() {
+    public void deleteCustomerByAverageNameLengthTest() {
         List<String> actualFirstNames = custPage.getFirstNames();
 
         /**

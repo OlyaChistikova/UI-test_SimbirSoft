@@ -63,9 +63,10 @@ public class BasePage {
      * Метод ожидания загрузки страницы.
      * Ожидает, пока логотип приложения станет видимым.
      */
-    public void waitUntilOpen(){
+    public BasePage waitUntilOpen(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(appLogo));
+        return this;
     }
 
 
