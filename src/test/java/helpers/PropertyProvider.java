@@ -2,17 +2,24 @@ package helpers;
 
 import lombok.Getter;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Класс-синглтон для загрузки и предоставления свойств из env_local.properties.
+ */
 public class PropertyProvider {
     private static PropertyProvider instance;
     private static final String filePath = "env_local.properties";
     @Getter
     private final Properties properties = new Properties();
 
+    /**
+     * Метод для получения экземпляра класса PropertyProvider.
+     *
+     * @return единственный экземпляр PropertyProvider.
+     */
     public static PropertyProvider getInstance(){
         if (instance == null){
             synchronized (PropertyProvider.class){
@@ -24,6 +31,9 @@ public class PropertyProvider {
         return instance;
     }
 
+    /**
+     * Приватный конструктор, который загружает свойства из env_local.properties.
+     */
     private PropertyProvider(){
         try(InputStream propertiesInputStream =
                     getClass().getClassLoader().getResourceAsStream(filePath))
@@ -37,24 +47,11 @@ public class PropertyProvider {
         }
     }
 
-    public String getProperty(String key){ return properties.getProperty(key);}
+    /**
+     * Статический метод для получения значения свойства по ключу.
+     *
+     * @param key ключ, по которому запрашивается значение свойства.
+     * @return значение свойства, соответствующее переданному ключу.
+     */
+    public static String getProperty(String key){ return getInstance().properties.getProperty(key);}
 }
-//public class PropertyProvider {
-//    private static Properties properties;
-//    private String filePath ="src/test/resources/env_local.properties";
-//
-//    public PropertyProvider() throws IOException {
-//        properties = new Properties();
-//        loadProperties();
-//    }
-//
-//    private void loadProperties() {
-//        try(FileInputStream inputStream = new FileInputStream(filePath)){
-//            properties.load(inputStream);
-//        }catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-//
-//    public static String getProperty(String key){ return properties.getProperty(key);}
-//}

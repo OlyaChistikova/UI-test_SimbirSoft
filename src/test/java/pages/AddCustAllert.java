@@ -1,37 +1,54 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v132.runtime.model.StackTrace;
 
-public class AddCustAllert {
-
-    private final WebDriver driver;
-
+/**
+ * Класс для управления алертами в веб-приложении.
+ */
+public class AddCustAllert extends BasePage{
 
     public AddCustAllert(WebDriver driver) {
-        this.driver = driver;
-
+        super(driver);
     }
 
-    public void accept(){
+    /**
+     * Принимает (закрывает) всплывающее сообщение (алерт).
+     * Перед закрытием алерта ожидает его появления.
+     */
+    @Step("Accepting alert")
+    public void accept() {
         waitForAlert();
         Alert alert = driver.switchTo().alert();
-        String alertText = alert.getText();
         alert.accept();
     }
 
-    public String getAlertText(){
+    /**
+     * Возвращает текст алерта.
+     *
+     * @return текст алерта.
+     */
+    @Step("Getting alert text")
+    public String getAlertText() {
         waitForAlert();
         Alert alert = driver.switchTo().alert();
         return alert.getText();
     }
-    public void waitForAlert(){
+
+    /**
+     * Ожидает появления алерта.
+     *
+     * @return allert
+     * @throws NoAlertPresentException если алерт отсутствует
+     */
+    @Step("Waiting for alert")
+    public void waitForAlert() {
         try {
             driver.switchTo().alert();
-        } catch (NoAlertPresentException e){
-            System.out.println("No alert present");
+        } catch (NoAlertPresentException e) {
+            throw new NoAlertPresentException("No allert present");
         }
     }
 }
